@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f9;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #2c3e50;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 10%;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: #3498db;
+    transform: translateX(-50%);
+}
+
+.event {
+    background: #ffffff;
+    border: 1px solid #dfe6e9;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+    width: 45%;
+    position: relative;
+}
+
+.event.left {
+    align-self: flex-start;
+    transform: translateX(-10%);
+}
+
+.event.right {
+    align-self: flex-end;
+    transform: translateX(10%);
+}
+
+.event::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 15px;
+    height: 15px;
+    background: #3498db;
+    border: 4px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #3498db;
+}
+
+.event.left::after {
+    right: -12px;
+}
+
+.event.right::after {
+    left: -12px;
+}
+
+.event h3 {
+    margin: 0;
+    color: #2c3e50;
+}
+
+.event p {
+    margin: 10px 0 0;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .event {
+        width: 80%;
+        align-self: center;
+        transform: translateX(0);
+    }
+
+    .event::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover; 
+  }
+/* From Uiverse.io by csemszepp */ 
+.container {
+    width: 100%;
+    height: 100%;
+    --s: 84px;
+    --c1: #f2f2f2;
+    --c2: #cdcbcc;
+    --c3: #999999;
+  
+    --_g: 0 120deg, #0000 0;
+    background: conic-gradient(
+        from 0deg at calc(500% / 6) calc(100% / 3),
+        var(--c3) var(--_g)
+      ),
+      conic-gradient(
+        from -120deg at calc(100% / 6) calc(100% / 3),
+        var(--c2) var(--_g)
+      ),
+      conic-gradient(
+        from 120deg at calc(100% / 3) calc(500% / 6),
+        var(--c1) var(--_g)
+      ),
+      conic-gradient(
+        from 120deg at calc(200% / 3) calc(500% / 6),
+        var(--c1) var(--_g)
+      ),
+      conic-gradient(
+        from -180deg at calc(100% / 3) 50%,
+        var(--c2) 60deg,
+        var(--c1) var(--_g)
+      ),
+      conic-gradient(
+        from 60deg at calc(200% / 3) 50%,
+        var(--c1) 60deg,
+        var(--c3) var(--_g)
+      ),
+      conic-gradient(
+        from -60deg at 50% calc(100% / 3),
+        var(--c1) 120deg,
+        var(--c2) 0 240deg,
+        var(--c3) 0
+      );
+    background-size: calc(var(--s) * 1.732) var(--s);
+  }
+  
